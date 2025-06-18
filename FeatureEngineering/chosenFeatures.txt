@@ -1,0 +1,7 @@
+lets do like 2 of them
+
+## 1. **Time-Based Features**
+**Time since last transaction**: Gap between consecutive transactions
+
+## 2. **Amount-Based Features**
+- **Amount velocity**: Total spending in recent time windows
