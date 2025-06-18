@@ -1,4 +1,4 @@
 artifacts/
-data/
+data/creditcard.csv
 __pycache__/
 fraud-venv/

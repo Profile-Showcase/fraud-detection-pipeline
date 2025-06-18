@@ -1,0 +1,10 @@
+
+**Key Dataset Features:**
+- 284,807 transactions over 2 days
+- Only 492 frauds (0.172% - highly imbalanced)
+- 30 features total:
+  - V1-V28: PCA-transformed features (anonymized)
+  - Time: Seconds elapsed from first transaction
+  - Amount: Transaction amount
+  - Class: Target variable (0=legitimate, 1=fraud)
+
