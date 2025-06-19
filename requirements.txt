@@ -1,1 +1,7 @@
 pyspark
+pandas
+scikit-learn
+xgboost
+matplotlib
+pyarrow
+s3fs
