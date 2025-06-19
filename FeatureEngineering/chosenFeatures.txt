@@ -5,3 +5,11 @@ lets do like 2 of them
 
 ## 2. **Amount-Based Features**
 - **Amount velocity**: Total spending in recent time windows
+
+
+uploaded script to s3
+
+
+aws s3 cp source-files.zip s3://fraud-data-bucket-pip/script/
+
+s3://fraud-data-bucket-pip/script/source-files.zip

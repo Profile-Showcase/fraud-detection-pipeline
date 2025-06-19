@@ -1,7 +1,6 @@
-from pyspark.sql import SparkSession
+# Feature engineering functions for Spark DataFrames (Glue compatible)
 from timeSinceLastTransaction import add_time_since_last_transaction
 from amountVelocitySpendingWindow import add_amount_velocity_features
-import os
 
 # Combine all features in a pipeline
 def create_fraud_features(df):
@@ -9,22 +8,10 @@ def create_fraud_features(df):
     df = add_amount_velocity_features(df)
     return df
 
-
-def main():
-    spark = SparkSession.builder.appName("FraudDetection").getOrCreate()
-    script_dir = os.path.dirname(os.path.abspath(__file__))
-    csv_path = os.path.join(script_dir, "../data/creditcard.csv")
-    df = spark.read.csv(csv_path, header=True, inferSchema=True)
-
-    # Add all available features
-    df = create_fraud_features(df)
-
-    # Show a sample of the resulting DataFrame
-    df.show(10)
-    df.printSchema()
-
-    # Optionally, save the result
-    # df.write.parquet("../data/creditcard_features.parquet")
-
-if __name__ == "__main__":
-    main()
+# Note: Do not include any SparkSession creation, file I/O, or main method here.
+# This module is now ready to be imported into an AWS Glue ETL script.
+# In Glue, use glueContext.spark_session to get the SparkSession and read/write from S3.
+# Example usage in Glue:
+# df = spark.read.csv('s3://your-bucket/input/', header=True, inferSchema=True)
+# df = create_fraud_features(df)
+# df.write.parquet('s3://your-bucket/output/')
